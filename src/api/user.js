@@ -52,3 +52,11 @@ export function changePassword (params) {
     data
   })
 }
+
+// TODO: 弄成action
+export function logout (params) {
+  return fetch({
+    url: `${process.env.SSO_SITE}/api/users/logout`,
+    method: 'post'
+  })
+}
