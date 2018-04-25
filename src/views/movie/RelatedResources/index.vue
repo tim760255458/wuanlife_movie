@@ -8,7 +8,7 @@
           <p>说明：{{ item.instruction }}</p>
           <footer>
             <span>分享者：{{ item.sharer.name }}</span>
-            <time>{{ item.create_at }}</time>
+            <span>{{ item.create_at }}</span>
             <div v-if="item.sharer.name === userName">
               <span
                 @click="editResources(item.mid, item.id, index)"

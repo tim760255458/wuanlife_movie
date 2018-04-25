@@ -66,15 +66,14 @@ export default {
   },
   methods: {
     setFetchResourcesData (res) {
-      console.log(res.resources)
       const { resources } = res
-      // const { id } = this.movieData
       const self = this
-      resources.map(item => {
-        item.create_at = parseTime(item.create_at)
+      this.resources = resources.map(item => {
+        item.create_at = parseTime(item.create_at, 'yy')
         item.mid = self.movieId
+        return item
       })
-      this.resources = resources
+      console.log(this.resources)
       this.resourcesLoading = false
     },
     setFetchMovieData (res) {
