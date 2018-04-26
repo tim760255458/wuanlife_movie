@@ -28,7 +28,7 @@ import MovieIntroduction from './MovieIntroduction'
 import Planet from './Planet'
 import RelatedResources from './RelatedResources'
 import { getMovie, getMovieResources } from 'api/movies'
-import { parseTime } from '../../filters'
+import { formatTime } from '../../filters'
 
 export default {
   name: 'Movie',
@@ -69,7 +69,7 @@ export default {
       const { resources } = res
       const self = this
       this.resources = resources.map(item => {
-        item.create_at = parseTime(item.create_at, 'yy')
+        item.create_at = formatTime(item.create_at)
         item.mid = self.movieId
         return item
       })
